@@ -5,6 +5,22 @@ import sys
 
 
 def main():
+
+        """Run administrative tasks."""
+        os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'config.settings')
+
+        # --- ДОБАВЬ ЭТОТ БЛОК ---
+        import django
+        django.setup()
+        from django.contrib.auth.models import User
+        if not User.objects.filter(username='admin').exists():
+            User.objects.create_superuser('admin', 'admin@example.com', 'Valera12345')
+            print("СУПЕРПОЛЬЗОВАТЕЛЬ СОЗДАН: admin / Valera12345")
+        # -------------------------
+
+        try:
+            from django.core.management import execute_from_command_line
+
     """Run administrative tasks."""
     os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'config.settings')
     try:
