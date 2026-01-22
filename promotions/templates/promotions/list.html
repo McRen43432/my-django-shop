@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Акции</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<header>
+    <h1>🔥 Акции и скидки</h1>
+    <nav>
+        <a href="/">Главная</a>
+        <a href="/reviews/">Отзывы</a>
+    </nav>
+</header>
+
+<div class="container">
+
+    <div class="grid">
+        {% for p in promos %}
+        <div class="card">
+            <h3>{{ p.title }}</h3>
+            <p>{{ p.description }}</p>
+            <span class="badge">Скидка</span>
+        </div>
+        {% empty %}
+        <p>Акций пока нет.</p>
+        {% endfor %}
+    </div>
+
+</div>
+
+<div class="footer">
+    Успей воспользоваться предложениями 🚀
+</div>
+
+</body>
+</html>

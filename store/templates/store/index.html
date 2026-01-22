@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Интернет-магазин</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<header>
+    <h1>🛒 Интернет-магазин</h1>
+    <nav>
+        <a href="/">Главная</a>
+        <a href="/reviews/">Отзывы</a>
+        <a href="/promotions/">Акции</a>
+    </nav>
+</header>
+
+<div class="container">
+    <h2>Товары</h2>
+
+    <div class="grid">
+        {% for p in products %}
+        <div class="card">
+            <h3>{{ p.name }}</h3>
+            <p class="price">{{ p.price }} ₸</p>
+            <span class="badge">В наличии</span>
+        </div>
+        {% empty %}
+        <p>Товары отсутствуют</p>
+        {% endfor %}
+    </div>
+</div>
+
+<div class="footer">
+    © 2026 Магазин Django
+</div>
+
+</body>
+</html>

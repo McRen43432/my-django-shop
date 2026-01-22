@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Отзывы</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<header>
+    <h1>💬 Отзывы покупателей</h1>
+    <nav>
+        <a href="/">Главная</a>
+        <a href="/promotions/">Акции</a>
+    </nav>
+</header>
+
+<div class="container">
+
+    {% for r in reviews %}
+    <div class="review">
+        {{ r.text }}
+    </div>
+    {% empty %}
+    <p>Пока нет отзывов.</p>
+    {% endfor %}
+
+</div>
+
+<div class="footer">
+    Спасибо за ваши отзывы ❤️
+</div>
+
+</body>
+</html>
